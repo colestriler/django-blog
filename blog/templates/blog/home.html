@@ -1,0 +1,44 @@
+
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-9">
+
+	{% for year in years %}
+		<h2><strong>{{year}}</strong></h2>
+		{% for post in posts %}
+			{% if post.date.year == year %}
+		    	<div class="media-body">
+		        <div class="article-metadata">
+		        </div>
+		        <p align='right'><small class="text-muted">{{ post.date|date:"F d, Y" }}</small></p>
+		        <h3><a class="article-title" href="#">{{ post.title }}</a></h3>
+		        <p class="article-content">{{ post.description }}</p>
+		        <!-- <a class="mr-2" href="#">{{ post.author }}</a> --> 
+		        </div>       
+			{% endif %}  
+		{% endfor %}
+		<br>
+	{% endfor %}
+
+    </div>
+    <div class="col-md-3">
+    	<div class="content-section">
+            <h3>Hey.</h3>
+            <p class='text-muted'>You can put any information here you'd like.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+              </ul>
+            </p>
+          </div>
+
+    </div>
+</div>
+
+{% endblock content %}
+
+

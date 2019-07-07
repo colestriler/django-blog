@@ -1,0 +1,33 @@
+
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-9">
+
+	<h3>...</h3>
+	<p>I mainly started this website to learn <a href="https://www.djangoproject.com/">Django</a>.
+  And then I just started building things for fun.</p>
+  <p>I used to have a notebook of every book I've read. Everytime I finished a book, however, I couldn't
+  find the notebook to record it. Therefore, I made the <a href="{% url 'blog-books'%}"> books</a>
+  page to make this easier for myself to keep track of.</p>
+
+    </div>
+    <div class="col-md-3">
+    	<div class="content-section">
+            <h3>Our Sidebar</h3>
+            <p class='text-muted'>You can put any information here you'd like.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+              </ul>
+            </p>
+          </div>
+
+    </div>
+</div>
+
+{% endblock content %}
+

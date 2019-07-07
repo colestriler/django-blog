@@ -1,0 +1,46 @@
+
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-9">
+
+	{% for year in years %}
+		<h2><strong>{{year}}</strong></h2>
+		{% for book in books %}
+			{% if book.date.year == year %}
+		    	<div class="media-body">
+		        <div class="article-metadata">
+		        </div>
+		        <p align='right'><small class="text-muted">{{ book.date|date:"F d, Y" }}</small></p>
+		        <h3><a class="article-title">{{ book.title }}</a></h3>
+		        <p class="article-content"><strong>{{ book.author }}</strong></p>
+		        <p class="article-content">{{ book.review }}</p>
+		        <p><small class="text-muted">Score: {{ book.rating}}/5</small></p>
+		        <!-- <a class="mr-2" href="#">{{ book.author }}</a> --> 
+		        </div>       
+			{% endif %}  
+		{% endfor %}
+		<br>
+	{% endfor %}
+
+    </div>
+    <div class="col-md-3">
+    	<div class="content-section">
+            <h3>Hey.</h3>
+            <p class='text-muted'>You can put any information here you'd like.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+              </ul>
+            </p>
+          </div>
+
+    </div>
+</div>
+
+{% endblock content %}
+
+
